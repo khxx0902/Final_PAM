@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "908543441340",
+    "project_id": "mindmend-350cb",
+    "storage_bucket": "mindmend-350cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:908543441340:android:d1cfa153887d823a6893b9",
+        "android_client_info": {
+          "package_name": "com.example.final_pam"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2IDVFno_ACxgELmCT39zuFjwISn3jLDc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
