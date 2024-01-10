@@ -16,6 +16,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
@@ -46,6 +47,16 @@ fun AddDataPasien (
             ) {
                 Icon(imageVector = Icons.Filled.ArrowBack, contentDescription = "back_button")
             }
+        }
+
+        Column(
+            modifier = Modifier
+                .padding(start = 60.dp, end = 60.dp, bottom = 50.dp)
+                .fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+
         }
     }
 
