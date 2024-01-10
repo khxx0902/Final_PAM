@@ -68,6 +68,16 @@ fun AddDataPasien (
                     Text(text = "ID Pasien")
                 }
             )
+            OutlinedTextField(
+                modifier = Modifier.fillMaxWidth(),
+                value = nmPasien,
+                onValueChange = {
+                    nmPasien = it
+                },
+                label = {
+                    Text(text = "Nama Pasien")
+                }
+            )
         }
     }
 
