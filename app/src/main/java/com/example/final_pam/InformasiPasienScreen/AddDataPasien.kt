@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -30,6 +31,7 @@ import androidx.navigation.NavController
 @Composable
 fun AddDataPasien (
     navController: NavController,
+    pasienViewModel: PasienViewModel,
 ) {
     var idPasien: String by remember { mutableStateOf("") }
     var nmPasien: String by remember { mutableStateOf("") }
@@ -116,7 +118,24 @@ fun AddDataPasien (
                 },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
             )
+        }
+        Button(
+            modifier = Modifier
+                .padding(top = 50.dp)
+                .fillMaxWidth(),
+            onClick = {
+                val dataPasien = DataPasien(
+                    idPasien = idPasien,
+                    nmPasien = nmPasien,
+                    umrPasien = umrPasien,
+                    keluhan = keluhan,
+                    tglkonsultasi = tglkonsultasi
+                )
 
+                pasienViewModel.saveData(dataPasien = dataPasien, context = context)
+            }
+        ) {
+            Text(text = "Save")
         }
     }
 
