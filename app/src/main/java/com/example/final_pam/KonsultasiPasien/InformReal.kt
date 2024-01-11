@@ -1,4 +1,4 @@
-package com.example.final_pam.HomePage
+package com.example.final_pam.KonsultasiPasien
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
@@ -31,14 +31,17 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.example.final_pam.Greeting
+import com.example.final_pam.HomePage.HomeViewModel
 import com.example.final_pam.Navigasi.Screens
 import com.example.final_pam.R
 import com.example.final_pam.ui.theme.Final_PAMTheme
 
 @Composable
-fun HomeScreen(
+fun InformReal(
     navController: NavController,
     homeViewModel: HomeViewModel
+
 ) {
     val image = painterResource(id = R.drawable.mentall) // Change the image resource accordingly
 

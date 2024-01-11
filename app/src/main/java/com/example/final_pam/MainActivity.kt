@@ -15,7 +15,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.final_pam.HomePage.HomeViewModel
 import com.example.final_pam.InformasiPasienScreen.PasienViewModel
-import com.example.final_pam.KonsultasiPasien.KonsultasiViewModel
 import com.example.final_pam.Navigasi.NavigasiHalaman
 import com.example.final_pam.tampilan.AuthViewModel
 import com.example.final_pam.tampilan.AuthenticationScreen
@@ -28,7 +27,6 @@ class MainActivity : ComponentActivity() {
     val db = Firebase.firestore
     private lateinit var navController: NavHostController
     private val pasienViewModel: PasienViewModel by viewModels()
-    private val konsultasiViewModel: KonsultasiViewModel by viewModels()
     private val authViewModel: AuthViewModel by viewModels()
     private val homeViewModel: HomeViewModel by viewModels()
 
@@ -46,7 +44,6 @@ class MainActivity : ComponentActivity() {
                     NavigasiHalaman(
                         navController = navController,
                         pasienViewModel = pasienViewModel,
-                        konsultasiViewModel = konsultasiViewModel,
                         authViewModel = authViewModel,
                         homeViewModel = homeViewModel,
 
