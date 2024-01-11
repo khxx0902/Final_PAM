@@ -3,6 +3,7 @@ package com.example.final_pam.InformasiPasienScreen
 import androidx.lifecycle.ViewModel
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
+import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.callbackFlow
 
 class PasienViewModel(): ViewModel() {
@@ -25,6 +26,9 @@ class PasienViewModel(): ViewModel() {
                 }
                 trySend(dataList)
             }
+        }
+        awaitClose {
+            subscription.remove()
         }
     }
 }
