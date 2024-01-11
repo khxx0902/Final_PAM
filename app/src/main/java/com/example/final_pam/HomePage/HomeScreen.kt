@@ -38,6 +38,7 @@ import com.example.final_pam.ui.theme.Final_PAMTheme
 @Composable
 fun HomeScreen(
     navController: NavController,
+    homeViewModel: HomeViewModel
 ) {
     val image = painterResource(id = R.drawable.mentall) // Change the image resource accordingly
 
@@ -117,10 +118,3 @@ fun HomeScreen(
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun PreviewEOrangeHome() {
-    Final_PAMTheme{
-        HomeScreen(navController = rememberNavController())
-    }
-}

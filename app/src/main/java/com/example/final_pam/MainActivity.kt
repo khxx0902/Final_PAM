@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.final_pam.HomePage.HomeViewModel
 import com.example.final_pam.InformasiPasienScreen.PasienViewModel
 import com.example.final_pam.KonsultasiPasien.KonsultasiViewModel
 import com.example.final_pam.Navigasi.NavigasiHalaman
@@ -29,15 +30,12 @@ class MainActivity : ComponentActivity() {
     private val pasienViewModel: PasienViewModel by viewModels()
     private val konsultasiViewModel: KonsultasiViewModel by viewModels()
     private val authViewModel: AuthViewModel by viewModels()
+    private val homeViewModel: HomeViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             Final_PAMTheme {
-
-
-
-
 
                 // A surface container using the 'background' color from the theme
                 Surface(
@@ -50,6 +48,7 @@ class MainActivity : ComponentActivity() {
                         pasienViewModel = pasienViewModel,
                         konsultasiViewModel = konsultasiViewModel,
                         authViewModel = authViewModel,
+                        homeViewModel = homeViewModel,
 
                         )
                 }

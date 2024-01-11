@@ -76,4 +76,3 @@ fun AuthenticationScreen(navController: NavController, authViewModel: AuthViewMo
         }
     }
 }
-
