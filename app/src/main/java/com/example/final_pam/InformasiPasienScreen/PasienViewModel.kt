@@ -9,5 +9,12 @@ class PasienViewModel(): ViewModel() {
 
     fun getAllData(): kotlinx.coroutines.flow.Flow<List<DataPasien>> = callbackFlow {
         val fireStoreRef = Firebase.firestore.collection("pasien")
+
+        val subscription = fireStoreRef.addSnapshotListener { value, error ->
+            if (error != null) {
+                close(error)
+                return@addSnapshotListener
+            }
+        }
     }
 }
