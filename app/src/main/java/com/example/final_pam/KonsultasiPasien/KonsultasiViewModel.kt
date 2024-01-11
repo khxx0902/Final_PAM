@@ -28,7 +28,7 @@ class KonsultasiViewModel() : ViewModel() {
             if (value != null) {
                 val dataList = mutableListOf<DataKonsultasi>()
                 for (doc in value.documents) {
-                    val dataKonsultasi = doc.toObject(dataKonsultasi::class.java)
+                    val dataKonsultasi = doc.toObject(DataKonsultasi::class.java)
                     if (dataKonsultasi != null) {
                         dataList.add(dataKonsultasi)
                     }
