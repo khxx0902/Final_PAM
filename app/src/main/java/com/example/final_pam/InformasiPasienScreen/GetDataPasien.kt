@@ -93,6 +93,16 @@ fun GetDataPasienScreen(
                     Text(text = "Get Data")
                 }
             }
+            OutlinedTextField(
+                modifier = Modifier.fillMaxWidth(),
+                value = nmPasien,
+                onValueChange = {
+                    nmPasien = it
+                },
+                label = {
+                    Text(text = "Nama Pasien")
+                }
+            )
             }
         }
     }
