@@ -1,4 +1,4 @@
-package com.example.final_pam.InformasiPasienScreen
+package com.example.final_pam.InformasiPasienScreen.Screen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -26,6 +26,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.final_pam.InformasiPasienScreen.DataPasien
+import com.example.final_pam.InformasiPasienScreen.PasienViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

@@ -1,4 +1,4 @@
-package com.example.final_pam.InformasiPasienScreen
+package com.example.final_pam.InformasiPasienScreen.Screen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

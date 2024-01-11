@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Final_PAM</string>
+    <string name="info_pasien_button">Info Pasien</string>
+    <string name="konsultasi_button">Konsultasi Pasien</string>
 </resources>
