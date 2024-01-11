@@ -15,6 +15,16 @@ class PasienViewModel(): ViewModel() {
                 close(error)
                 return@addSnapshotListener
             }
+            if (value != null) {
+                val dataList = mutableListOf<DataPasien>()
+                for (doc in value.documents) {
+                    val dataPasien = doc.toObject(DataPasien::class.java)
+                    if (dataPasien != null) {
+                        dataList.add(dataPasien)
+                    }
+                }
+                trySend(dataList)
+            }
         }
     }
 }
