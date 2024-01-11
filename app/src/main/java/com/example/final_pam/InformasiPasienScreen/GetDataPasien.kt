@@ -141,6 +141,24 @@ fun GetDataPasienScreen(
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
             )
         }
+        Button(
+            modifier = Modifier
+                .padding(top = 50.dp)
+                .fillMaxWidth(),
+            onClick = {
+                val dataPasien = DataPasien(
+                    idPasien = idPasien,
+                    nmPasien = nmPasien,
+                    umrPasien = umrPasien,
+                    keluhan = keluhan,
+                    tglkonsultasi = tglkonsultasi
+                )
+
+                pasienViewModel.saveData(dataPasien = dataPasien, context = context)
+            }
+        ) {
+            Text(text = "Save")
+        }
             }
         }
     }
