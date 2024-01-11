@@ -5,6 +5,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
+import com.google.firebase.firestore.toObject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.awaitClose
@@ -48,6 +49,29 @@ class PasienViewModel(): ViewModel() {
             fireStoreRef.set(dataPasien)
                 .addOnSuccessListener {
                     Toast.makeText(context, "Succsesfully saved data", Toast.LENGTH_LONG).show()
+                }
+        } catch (e: Exception){
+            Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
+        }
+    }
+    fun retrieveData(
+        idPasien: String,
+        context: Context,
+        data: (DataPasien) -> Unit
+    )    = CoroutineScope(Dispatchers.IO).launch {
+        val fireStoreRef = Firebase.firestore
+            .collection("pasien")
+            .document(idPasien)
+
+        try{
+            fireStoreRef.get()
+                .addOnSuccessListener {
+                    if (it.exists()){
+                        val dataPasien = it.toObject<DataPasien>()!!
+                        data(dataPasien)
+                    } else {
+                        Toast.makeText(context, "No User Data Found", Toast.LENGTH_SHORT).show()
+                    }
                 }
         } catch (e: Exception){
             Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
