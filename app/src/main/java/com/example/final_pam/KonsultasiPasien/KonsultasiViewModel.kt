@@ -1,5 +1,6 @@
 package com.example.final_pam.KonsultasiPasien
 
+import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
@@ -30,10 +31,26 @@ class KonsultasiViewModel() : ViewModel() {
             }
         }
 
-        // Cancellation callback
         awaitClose {
             subscription.remove()
         }
     }
+    fun saveData(
+        dataKonsultasi: DataKonsultasi,
+        context: Context
+    )= CoroutineScope(Dispatchers.IO).launch {
+
+        val fireStoreRef = Firebase.firestore
+            .collection("konsultasi")
+            .document(dataKonsultasi.idPasien)
+
+        try {
+            fireStoreRef.set(dataKonsultasi)
+                .addOnSuccessListener {
+                    Toast.makeText(context, "Successfully saved data", Toast.LENGTH_SHORT).show()
+                }
+        } catch (e: Exception) {
+            Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
+        }
     }
 }
