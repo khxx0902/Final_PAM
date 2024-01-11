@@ -6,8 +6,10 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -72,6 +74,25 @@ fun GetDataPasienScreen(
                         Text(text = "ID Pasien")
                     }
                 )
+                Button(
+                    modifier = Modifier
+                        .padding(start = 10.dp)
+                        .width(100.dp),
+                    onClick = {
+                        pasienViewModel.retrieveData(
+                            idPasien = idPasien,
+                            context = context
+                        ) { data ->
+                            nmPasien = data.nmPasien
+                            umrPasien = data.umrPasien
+                            keluhan = data.keluhan
+                            tglkonsultasi = data.tglkonsultasi
+                        }
+                    }
+                ) {
+                    Text(text = "Get Data")
+                }
+            }
             }
         }
     }
