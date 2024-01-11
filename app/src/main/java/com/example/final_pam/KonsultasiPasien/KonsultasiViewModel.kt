@@ -3,11 +3,15 @@ package com.example.final_pam.KonsultasiPasien
 import android.content.Context
 import android.widget.Toast
 import androidx.lifecycle.ViewModel
+import androidx.navigation.NavController
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
 import com.google.firebase.firestore.toObject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.callbackFlow
+import kotlinx.coroutines.launch
 
 class KonsultasiViewModel() : ViewModel() {
 
@@ -78,6 +82,27 @@ class KonsultasiViewModel() : ViewModel() {
                 }
         } catch (e: Exception) {
             Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
+        }
+        fun deleteData(
+            idPasien: String,
+            context: Context,
+            navController: NavController,
+        ) = CoroutineScope(Dispatchers.IO).launch {
+
+            val fireStoreRef = Firebase.firestore
+                .collection("konsultasi")
+                .document(idPasien)
+
+            try {
+                fireStoreRef.delete()
+                    .addOnSuccessListener {
+                        Toast.makeText(context, "Successfully deleted data", Toast.LENGTH_SHORT)
+                            .show()
+                        navController.popBackStack()
+                    }
+            } catch (e: Exception) {
+                Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
