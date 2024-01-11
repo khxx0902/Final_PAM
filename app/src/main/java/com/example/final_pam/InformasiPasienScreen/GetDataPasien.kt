@@ -129,6 +129,18 @@ fun GetDataPasienScreen(
                     Text(text = "Keluhan Yang DiAlami")
                 }
             )
+            OutlinedTextField(
+                modifier = Modifier.fillMaxWidth(),
+                value = tglkonsultasi,
+                onValueChange = {
+                    tglkonsultasi = it
+                    // You can perform additional date validation or formatting here if needed
+                },
+                label = { Text(text = "Tanggal (DD/MM/YYYY)")
+                },
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+            )
+        }
             }
         }
     }
