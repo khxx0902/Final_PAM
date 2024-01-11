@@ -159,6 +159,20 @@ fun GetDataPasienScreen(
         ) {
             Text(text = "Save")
         }
+        Button(
+            modifier = Modifier
+                .padding(top = 20.dp)
+                .fillMaxWidth(),
+            onClick = {
+                pasienViewModel.delateData(
+                    idPasien = idPasien,
+                    context = context,
+                    navController = navController
+                )
             }
+        ) {
+            Text(text = "Delete")
         }
+
     }
+}
