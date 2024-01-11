@@ -119,6 +119,16 @@ fun GetDataPasienScreen(
                 },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
             )
+            OutlinedTextField(
+                modifier = Modifier.fillMaxWidth(),
+                value = keluhan,
+                onValueChange = {
+                    keluhan = it
+                },
+                label = {
+                    Text(text = "Keluhan Yang DiAlami")
+                }
+            )
             }
         }
     }
