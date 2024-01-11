@@ -23,6 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -30,6 +31,8 @@ import androidx.navigation.NavController
 import com.example.final_pam.KonsultasiPasien.DataKonsultasi
 import com.example.final_pam.KonsultasiPasien.KonsultasiViewModel
 import com.example.final_pam.Navigasi.Screens
+import com.example.final_pam.tampilan.AuthenticationScreen
+import com.example.final_pam.ui.theme.Final_PAMTheme
 
 @Composable
 fun KonsultasiScreen(
@@ -101,4 +104,5 @@ fun KonsultasiListItem(konsultasiData: DataKonsultasi) {
         }
     }
 }
+
 

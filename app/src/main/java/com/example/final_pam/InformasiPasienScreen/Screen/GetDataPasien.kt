@@ -27,6 +27,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.final_pam.InformasiPasienScreen.DataPasien
+import com.example.final_pam.InformasiPasienScreen.PasienViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -164,7 +166,7 @@ fun GetDataPasienScreen(
                 .padding(top = 20.dp)
                 .fillMaxWidth(),
             onClick = {
-                pasienViewModel.delateData(
+                pasienViewModel.deleteData(
                     idPasien = idPasien,
                     context = context,
                     navController = navController

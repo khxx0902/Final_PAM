@@ -83,26 +83,26 @@ class KonsultasiViewModel() : ViewModel() {
         } catch (e: Exception) {
             Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
         }
-        fun deleteData(
-            idPasien: String,
-            context: Context,
-            navController: NavController,
-        ) = CoroutineScope(Dispatchers.IO).launch {
+    }
+    fun deleteData(
+        idPasien: String,
+        context: Context,
+        navController: NavController,
+    ) = CoroutineScope(Dispatchers.IO).launch {
 
-            val fireStoreRef = Firebase.firestore
-                .collection("konsultasi")
-                .document(idPasien)
+        val fireStoreRef = Firebase.firestore
+            .collection("konsultasi")
+            .document(idPasien)
 
-            try {
-                fireStoreRef.delete()
-                    .addOnSuccessListener {
-                        Toast.makeText(context, "Successfully deleted data", Toast.LENGTH_SHORT)
-                            .show()
-                        navController.popBackStack()
-                    }
-            } catch (e: Exception) {
-                Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
-            }
+        try {
+            fireStoreRef.delete()
+                .addOnSuccessListener {
+                    Toast.makeText(context, "Successfully deleted data", Toast.LENGTH_SHORT)
+                        .show()
+                    navController.popBackStack()
+                }
+        } catch (e: Exception) {
+            Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
         }
     }
 }

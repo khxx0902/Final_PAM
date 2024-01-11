@@ -35,14 +35,17 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.final_pam.InformasiPasienScreen.DataPasien
 import com.example.final_pam.InformasiPasienScreen.PasienViewModel
 import com.example.final_pam.Navigasi.Screens
 import com.example.final_pam.R
+import com.example.final_pam.ui.theme.Final_PAMTheme
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
@@ -168,5 +171,14 @@ fun PasienListItem(pasienData: DataPasien) {
             Text(text = "Keluhan: ${pasienData.keluhan}")
             Text(text = "Tanggal Konsultasi: ${pasienData.tglkonsultasi}")
         }
+    }
+}
+
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewPasienScreen() {
+    Final_PAMTheme {
+        PasienScreen(navController = rememberNavController(), pasienViewModel = PasienViewModel())
     }
 }

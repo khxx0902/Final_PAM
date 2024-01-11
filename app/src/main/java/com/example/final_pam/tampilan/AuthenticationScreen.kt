@@ -22,11 +22,12 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import com.example.final_pam.ui.theme.Final_PAMTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AuthenticationScreen(authViewModel: AuthViewModel = viewModel()) {
+fun AuthenticationScreen(navController: NavController, authViewModel: AuthViewModel = viewModel()) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
@@ -76,10 +77,3 @@ fun AuthenticationScreen(authViewModel: AuthViewModel = viewModel()) {
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun PreviewAAuthenticationScreen() {
-    Final_PAMTheme {
-        AuthenticationScreen()
-    }
-}
