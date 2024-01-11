@@ -67,6 +67,11 @@ fun PasienScreen(
                 ) {
                     Text(text = "Add Data Pasien")
                 }
+                OutlinedButton(
+                    onClick = { navController.navigate(route = Screens.GetDataMotorScreen.route) },
+                ) {
+                    Text(text = "Get Data Pasien")
+                }
             }
         }
     }
