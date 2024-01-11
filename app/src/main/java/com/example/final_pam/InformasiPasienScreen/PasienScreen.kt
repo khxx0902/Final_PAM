@@ -12,6 +12,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -60,6 +61,11 @@ fun PasienScreen(
                     onClick = { navController.navigateUp() }
                 ) {
                     Icon(imageVector = Icons.Filled.ArrowBack, contentDescription = "Back")
+                }
+                OutlinedButton(
+                    onClick = {  navController.navigate(route = Screens.AddPasienMotorScreen.route) },
+                ) {
+                    Text(text = "Add Data Pasien")
                 }
             }
         }
