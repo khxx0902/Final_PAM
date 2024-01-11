@@ -93,7 +93,7 @@ fun HomeScreen(
                 .padding(dimensionResource(R.dimen.padding_medium))
         ) {
             IconButton(
-                onClick = {navController.navigate(Screens.InformReal.route)},
+                onClick = {navController.navigate(Screens.informrealscreen.route)},
                 modifier = Modifier.weight(1f)
             ) {
                 Icon(

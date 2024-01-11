@@ -6,24 +6,27 @@ import androidx.navigation.compose.NavHost
 import com.example.final_pam.InformasiPasienScreen.PasienViewModel
 import com.example.final_pam.InformasiPasienScreen.Screen.GetDataPasienScreen
 import com.example.final_pam.tampilan.AuthViewModel
-import com.example.final_pam.tampilan.AuthenticationScreen
 import androidx.navigation.compose.composable
 import com.example.final_pam.HomePage.HomeScreen
 import com.example.final_pam.HomePage.HomeViewModel
 import com.example.final_pam.InformasiPasienScreen.Screen.AddDataPasien
 import com.example.final_pam.InformasiPasienScreen.Screen.PasienScreen
+import com.example.final_pam.KonsultasiPasien.InformViewModel
+import com.example.final_pam.KonsultasiPasien.screen.informrealscreen
+import com.example.final_pam.tampilan.AuthenticationScreen
 
 @Composable
 fun NavigasiHalaman(
     navController: NavHostController,
     authViewModel: AuthViewModel,
     pasienViewModel: PasienViewModel,
-    homeViewModel: HomeViewModel
+    homeViewModel: HomeViewModel,
+    informViewModel: InformViewModel
 
 ) {
     NavHost(
         navController = navController,
-        startDestination = Screens.HomeScreen.route
+        startDestination = Screens.AuthenticationScreen.route
     ) {
         composable(
             route = Screens.HomeScreen.route
@@ -39,6 +42,14 @@ fun NavigasiHalaman(
             AuthenticationScreen(
                 navController = navController,
                 authViewModel = authViewModel
+            )
+        }
+        composable(
+            route = Screens.informrealscreen.route
+        ) {
+            informrealscreen (
+                navController = navController,
+                informViewModel = informViewModel
             )
         }
         composable(

@@ -15,9 +15,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.final_pam.HomePage.HomeViewModel
 import com.example.final_pam.InformasiPasienScreen.PasienViewModel
+import com.example.final_pam.KonsultasiPasien.InformViewModel
 import com.example.final_pam.Navigasi.NavigasiHalaman
 import com.example.final_pam.tampilan.AuthViewModel
-import com.example.final_pam.tampilan.AuthenticationScreen
 import com.example.final_pam.ui.theme.Final_PAMTheme
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
@@ -29,6 +29,7 @@ class MainActivity : ComponentActivity() {
     private val pasienViewModel: PasienViewModel by viewModels()
     private val authViewModel: AuthViewModel by viewModels()
     private val homeViewModel: HomeViewModel by viewModels()
+    private val informViewModel: InformViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +47,7 @@ class MainActivity : ComponentActivity() {
                         pasienViewModel = pasienViewModel,
                         authViewModel = authViewModel,
                         homeViewModel = homeViewModel,
-
+                        informViewModel = informViewModel,
                         )
                 }
             }
